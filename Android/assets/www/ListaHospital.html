@@ -1,0 +1,66 @@
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Take Care Mobile Application</title>
+        <link href="js/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+        <link href="js/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="js/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+        <script src="js/phonegap-1.4.1.js"></script>
+        <script>
+            function mandar_id(P_ID){
+               window.location = "mapDoctor.html?doctor$" + P_ID;
+            }
+			
+			function mandar_texto(P_ID){
+				if(document.getElementById('radio1_0').checked){
+                window.location = "ListaHospital.html?hospital$" + P_ID;
+				}
+				if(document.getElementById('radio1_1').checked){
+                window.location = "ListaDoctor.html?doctor$" + P_ID;
+				}
+			
+			
+			}
+			
+        </script>	
+    
+    </head> 
+    <body>
+    	<div data-role="page" id="page">
+        <div data-inline="true" data-type="horizontal"><a onclick="history.go(-1);" data-role="button" data-inline="true">Atras</a><a onclick="window.location = 'index.html'" data-role="button" data-inline="true">Inicio</a><a onclick= "navigator.app.exitApp();" data-role="button" data-inline="true">Cerrar</a></div>
+               <div data-role="header">
+                <h1 align="center"><strong><em>Take Care</em></strong></h1>
+                <div align="center"><p><img src="js/images/logo2.png" height= 35% width= 80%><br>
+                  <em>Nuestra preocupacion es tu salud !!!</em></p></div>
+</div>
+        <div id="ListaDoctor">
+		 <h2>Lista de Hospital</h2>
+		 <script src="js/ListarHosptial.js"></script> 
+          </div>
+		
+         <div data-role="collapsible-set">
+              <div data-role="collapsible">
+                <h3><a href="#" data-role="button">Busquedad Avanzada</a></h3>
+                <div data-role="fieldcontain">
+                  <fieldset data-role="controlgroup">
+                    <h2 align="center"> Busquedad Avanzada</h2>
+                      <p>
+                        <input type="radio" name="radio1" id="radio1_0" value="1" checked />
+                        <label for="radio1_0">Hospital</label>
+                        
+                        <input type="radio" name="radio1" id="radio1_1" value="2" />
+                        <label for="radio1_1">Doctor</label>
+                        
+                       </p>
+                      <div data-role="fieldcontain">
+                        <label for="textinput">Palabra Clave:</label>
+                  <input type="text" name="textinput" id="textinput" value=""  />
+                      <a onclick= "mandar_texto(textinput.value);" data-role="button">Buscar</a></div></fieldset></div></div>
+            </div>
+</div>
+ 
+        <br />
+</body>
+</html>

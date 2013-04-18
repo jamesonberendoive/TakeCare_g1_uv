@@ -1,0 +1,11 @@
+lista de :
+	hospitales y seguros que acceptan
+	Lista de los hospitales en los que labora un doctor	
+	Lista de los docotores de un hopital ordenado por especialidad, ya
+	horario de un doctor y su consultorio.
+	
+	000webshost.com
+	
+	members area ---- a la derecha abajo
+	kenecy@gmail.com
+	teamo29

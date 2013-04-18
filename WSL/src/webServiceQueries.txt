@@ -1,0 +1,10 @@
+Horario del medico
+SELECT     dbo_T_doctor.ID_doctor, dbo_T_doctor.Nombre, dbo_T_doctor.Apellido, dbo_T_especialidad.Nombre, dbo_T_consultorio.Numero, dbo_T_horario_disponible.horario, dbo_T_hospital.ID_hospital, 
+                      dbo_T_hospital.Nombre AS Hospital, dbo_T_horario_disponible.horario AS Expr1, dbo_T_consultorio.Piso, dbo_T_hospital.Direccion
+FROM         dbo_T_doctor INNER JOIN
+                      dbo_T_doctor_especialidad ON dbo_T_doctor.ID_doctor = dbo_T_doctor_especialidad.ID_doctor INNER JOIN
+                      dbo_T_especialidad ON dbo_T_doctor_especialidad.ID_especialidad = dbo_T_especialidad.ID_especialidad INNER JOIN
+                      dbo_T_doctor_consultorio ON dbo_T_doctor.ID_doctor = dbo_T_doctor_consultorio.ID_doctor INNER JOIN
+                      dbo_T_consultorio ON dbo_T_doctor_consultorio.ID_consultorio = dbo_T_consultorio.ID_consultorio INNER JOIN
+                      dbo_T_hospital ON dbo_T_doctor_consultorio.ID_hospital = dbo_T_hospital.ID_hospital INNER JOIN
+                      dbo_T_horario_disponible ON dbo_T_doctor_consultorio.ID_horario = dbo_T_horario_disponible.ID_horario
